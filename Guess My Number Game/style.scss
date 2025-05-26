@@ -1,34 +1,28 @@
+@import "mixin";
+@import "variables";
+@import "extends";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-$main-color: black;
-$font-color: white;
-
 body {
   background-color: $main-color;
-  // font-family: roboto;
   padding: 1rem;
 
   .game-container {
-    display: flex;
-    flex-direction: column;
+    @include flex($justify: flex-start, $align: stretch, $direction: column);
     gap: 2rem;
     width: 100%;
 
     .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex($justify: space-between, $align: center, $direction: row);
       gap: 1rem;
 
       .reset-btn {
-        max-width: 200px;
-        font-size: 1.5rem;
-        height: 3rem;
-        padding: 0 1rem;
+        @extend %button-style;
       }
 
       .range-info {
@@ -45,11 +39,8 @@ body {
 
     .display-section {
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex($justify: center, $align: center, $direction: column);
       gap: 2rem;
-      flex-direction: column;
 
       .divider-line {
         background-color: $font-color;
@@ -59,49 +50,28 @@ body {
       }
 
       .number-box {
-        color: black;
-        border: 1px solid black;
-        aspect-ratio: 1 / 1;
-        width: clamp(80px, 20vw, 160px);
-        font-size: clamp(40px, 8vw, 130px);
-        background-color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        z-index: 1;
+        @extend %number-box-style;
+        @include flex($justify: center, $align: center, $direction: row);
       }
     }
 
     .game-interaction {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: flex-start;
+      @include flex($justify: space-evenly, $align: flex-start,$direction: row);
       flex-wrap: wrap;
       gap: 2rem;
 
       .input-section {
-        display: flex;
-        flex-direction: column;
+        @include flex($justify: flex-start,  $align: stretch, $direction: column);
         gap: 0.5rem;
         max-width: 300px;
 
         .number-input {
-          width: 100%;
-          height: 3.5rem;
-          font-size: 1.5rem;
-          border: 2px solid white;
-          background-color: black;
-          color: white;
-          padding: 0 0.5rem;
+          @extend %input-style;
         }
 
         .check-btn {
-          width: 100%;
-          max-width: 120px;
-          height: 2.5rem;
+          @extend %button-style;
           align-self: center;
-          font-size: 1.2rem;
         }
       }
 
