@@ -8,8 +8,8 @@ const scoreLabel = document.getElementById("score-label");
 const highscoreLabel = document.getElementById("highscore-label");
 
 
-const number = Math.floor(Math.random() * 20) + 1;
-
+let number = Math.floor(Math.random() * 20) + 1;
+console.log(number);
 let score = 20;
 let highscore = 0;
 
