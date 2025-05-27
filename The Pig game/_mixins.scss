@@ -1,0 +1,17 @@
+@mixin centerFlex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin size($width, $height){
+    width: $width;
+    height: $height;
+}

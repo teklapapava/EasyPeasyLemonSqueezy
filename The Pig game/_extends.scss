@@ -1,0 +1,13 @@
+%buttons{
+    position: absolute;
+    @include center();
+    width: 20%;
+    max-width: 8rem;
+    height: 2.5rem;
+    border-radius: 3rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
+  }    
